@@ -1,0 +1,12 @@
+diff -Naur a/target/linux/rockchip/Makefile b/target/linux/rockchip/Makefile
+--- a/target/linux/rockchip/Makefile	2023-12-02 04:20:12.464308245 +0800
++++ b/target/linux/rockchip/Makefile	2023-12-02 04:20:46.710637384 +0800
+@@ -7,7 +7,7 @@
+ FEATURES:=ext4 audio usb usbgadget display gpio fpu pci pcie rootfs-part boot-part squashfs
+ SUBTARGETS:=armv8
+ 
+-KERNEL_PATCHVER:=5.15
++KERNEL_PATCHVER:=6.1
+ KERNEL_TESTING_PATCHVER:=6.1
+ 
+ define Target/Description
