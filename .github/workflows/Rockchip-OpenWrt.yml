@@ -70,6 +70,11 @@ jobs:
         VERSION_INFO=$(git show -s --date=short --format="Author: %an<br/>date: %cd<br/>commit: %s<br/>commit hash: %H")
         echo "VERSION_INFO=$VERSION_INFO" >> $GITHUB_ENV
 
+    - name: Patch Kernel 6.1
+      run: |
+        cd openwrt
+        patch -d './' -B --merge -p1 -E --forward < $GITHUB_WORKSPACE/scripts/rockchip-kernel-6-1.patch
+
     - name: Generate Variables
       run: |
         cp $CONFIG_FILE $OPENWRT_PATH/.config
