@@ -77,10 +77,10 @@ jobs:
         COMMIT_HASH=$(git show -s --date=short --format="hash: %H")
         echo "COMMIT_HASH=$COMMIT_HASH" >> $GITHUB_ENV
 
-    - name: Patch Kernel 6.1
-      run: |
-        cd openwrt
-        patch -d './' -B --merge -p1 -E --forward < $GITHUB_WORKSPACE/scripts/rockchip-kernel-6-1.patch
+    # - name: Patch Kernel 6.1
+    #   run: |
+    #     cd openwrt
+    #     patch -d './' -B --merge -p1 -E --forward < $GITHUB_WORKSPACE/scripts/rockchip-kernel-6-1.patch
 
     - name: Generate Variables
       run: |
